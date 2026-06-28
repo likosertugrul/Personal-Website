@@ -6,9 +6,9 @@ import { FadeUp } from "@/components/ui/AnimatedSection";
 import { useLanguage } from "@/context/LanguageContext";
 
 const SOCIALS = [
-  { Icon: GitHubIcon,  href: "https://github.com/yourusername",    label: "GitHub"   },
-  { Icon: LinkedInIcon, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { Icon: XIcon,       href: "https://x.com/yourusername",          label: "X"        },
+  { Icon: GitHubIcon,  href: "https://github.com/likosertugrul",    label: "GitHub"   },
+  { Icon: LinkedInIcon, href: "https://linkedin.com/in/likosertugrul", label: "LinkedIn" },
+  { Icon: XIcon,       href: "https://x.com/likosertugrul",          label: "X"        },
   { Icon: Mail,        href: "mailto:likosertugrul128@gmail.com",    label: "Email"    },
 ];
 

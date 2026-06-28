@@ -77,7 +77,7 @@ export default function Hero() {
 
         <div className="fade-up-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/likosertugrul"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg border transition-all duration-200 font-medium w-full sm:w-auto justify-center hover:brightness-110"
@@ -90,7 +90,7 @@ export default function Hero() {
             <GitHubIcon size={18} /> GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/likosertugrul"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all duration-200 font-medium w-full sm:w-auto justify-center"
