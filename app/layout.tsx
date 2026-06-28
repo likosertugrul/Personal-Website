@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Ertuğrul Likos",
   },
   description:
-    "Ertuğrul Likos — React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiren Bilgisayar Mühendisi. Computer Engineer & Software Developer building user-focused apps.",
+    "Ertuğrul Likos — Computer Engineer & Software Developer. React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiriyorum.",
   keywords: [
     "Ertuğrul Likos",
     "Likos Ertuğrul",

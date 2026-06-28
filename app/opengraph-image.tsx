@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
-import fs from "fs";
-import path from "path";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
+export const runtime = "nodejs";
 export const alt = "Ertuğrul Likos — Software Developer & Computer Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  const profileBuffer = fs.readFileSync(
-    path.join(process.cwd(), "public", "profile.jpeg")
+  const profileBuffer = readFileSync(
+    join(process.cwd(), "public", "profile.jpeg")
   );
   const profileSrc = `data:image/jpeg;base64,${profileBuffer.toString("base64")}`;
 
@@ -36,7 +37,8 @@ export default async function Image() {
             transform: "translate(-50%, -50%)",
             width: 800,
             height: 800,
-            background: "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 65%)",
+            background:
+              "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 65%)",
             borderRadius: "50%",
           }}
         />
