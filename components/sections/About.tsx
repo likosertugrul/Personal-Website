@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Code2, Smartphone, Globe, Coffee } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { FadeUp, FadeLeft, FadeRight, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
@@ -28,18 +29,17 @@ export default function About() {
           <FadeLeft className="flex justify-center lg:justify-start">
             <div className="relative">
               <div
-                className="w-56 h-56 md:w-64 md:h-64 rounded-2xl flex items-center justify-center border"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, var(--av-from), var(--av-to))",
-                  borderColor: "var(--border-accent)",
-                }}
+                className="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border"
+                style={{ borderColor: "var(--border-accent)" }}
               >
-                <span
-                  className="text-7xl font-bold select-none"
-                  style={{ color: "var(--av-text)" }}
-                >
-                  EL
-                </span>
+                <Image
+                  src="/profile.jpeg"
+                  alt="Ertuğrul Likos"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
               <div
                 className="absolute -inset-3 rounded-2xl border pointer-events-none"

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Ertuğrul Likos",
   },
   description:
-    "Ertuğrul Likos — React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiren Bilgisayar Mühendisi. Kişisel portföy sitesi.",
+    "Ertuğrul Likos — React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiren Bilgisayar Mühendisi. Computer Engineer & Software Developer building user-focused apps.",
   keywords: [
     "Ertuğrul Likos",
     "Likos Ertuğrul",
@@ -68,8 +68,9 @@ const jsonLd = {
   url: BASE_URL,
   email: "likosertugrul128@gmail.com",
   jobTitle: "Software Developer & Computer Engineer",
+  image: `${BASE_URL}/profile.jpeg`,
   description:
-    "React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiren Bilgisayar Mühendisi.",
+    "React, React Native ve Next.js ile kullanıcı odaklı uygulamalar geliştiren Bilgisayar Mühendisi. Computer Engineer & Software Developer.",
   knowsAbout: ["React", "React Native", "Next.js", "TypeScript", "Node.js", "Expo"],
   sameAs: [
     "https://github.com/likosertugrul",
