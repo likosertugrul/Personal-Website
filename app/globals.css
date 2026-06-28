@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Theme CSS variables ──────────────────────────────── */
+
+html {
+  /* Dark theme (default) */
+  --bg:            #09090b;
+  --surface:       rgba(39,39,42,0.35);
+  --card:          #18181b;
+  --card-hover:    rgba(39,39,42,0.6);
+  --nav-bg:        rgba(9,9,11,0.9);
+  --border:        #27272a;
+  --border-accent: rgba(139,92,246,0.4);
+  --text:          #f4f4f5;
+  --text-muted:    #a1a1aa;
+  --text-faint:    #52525b;
+  --accent:        #8b5cf6;
+  --accent-h:      #7c3aed;
+  --accent-muted:  rgba(139,92,246,0.15);
+  --accent-soft:   #a78bfa;
+  --av-from:       #5b21b6;
+  --av-to:         #4c1d95;
+  --av-text:       #c4b5fd;
+  --gr-from:       #c4b5fd;
+  --gr-via:        #8b5cf6;
+  --gr-to:         #4c1d95;
+  --glow:          rgba(139,92,246,0.13);
+  --featured-bg:   rgba(109,40,217,0.15);
+  --featured-border:rgba(139,92,246,0.3);
+  --featured-text: #a78bfa;
+  --tag-bg:        #18181b;
+  --tag-text:      #a1a1aa;
+  --tag-border:    #3f3f46;
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html.theme-light {
+  --bg:            #fafafa;
+  --surface:       rgba(244,244,245,0.6);
+  --card:          #ffffff;
+  --card-hover:    rgba(245,243,255,0.5);
+  --nav-bg:        rgba(255,255,255,0.9);
+  --border:        #e4e4e7;
+  --border-accent: rgba(124,58,237,0.35);
+  --text:          #18181b;
+  --text-muted:    #71717a;
+  --text-faint:    #a1a1aa;
+  --accent:        #7c3aed;
+  --accent-h:      #6d28d9;
+  --accent-muted:  rgba(124,58,237,0.1);
+  --accent-soft:   #8b5cf6;
+  --av-from:       #ddd6fe;
+  --av-to:         #c4b5fd;
+  --av-text:       #5b21b6;
+  --gr-from:       #7c3aed;
+  --gr-via:        #8b5cf6;
+  --gr-to:         #4c1d95;
+  --glow:          rgba(124,58,237,0.06);
+  --featured-bg:   rgba(124,58,237,0.08);
+  --featured-border:rgba(124,58,237,0.3);
+  --featured-text: #7c3aed;
+  --tag-bg:        #f4f4f5;
+  --tag-text:      #52525b;
+  --tag-border:    #e4e4e7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.theme-warm {
+  --bg:            #181614;
+  --surface:       rgba(34,31,27,0.6);
+  --card:          #1e1b17;
+  --card-hover:    rgba(40,36,30,0.9);
+  --nav-bg:        rgba(24,22,20,0.88);
+  --border:        rgba(255,255,255,0.08);
+  --border-accent: rgba(224,120,48,0.45);
+  --text:          #f0ebe4;
+  --text-muted:    #a09488;
+  --text-faint:    #6b5e52;
+  --accent:        #e07830;
+  --accent-h:      #c96820;
+  --accent-muted:  rgba(224,120,48,0.15);
+  --accent-soft:   #f0955a;
+  --av-from:       #7c3800;
+  --av-to:         #4a2200;
+  --av-text:       #f0955a;
+  --gr-from:       #f5a870;
+  --gr-via:        #e07830;
+  --gr-to:         #b85520;
+  --glow:          rgba(224,120,48,0.15);
+  --featured-bg:   rgba(224,120,48,0.12);
+  --featured-border:rgba(224,120,48,0.3);
+  --featured-text: #f0955a;
+  --tag-bg:        rgba(255,255,255,0.04);
+  --tag-text:      #a09488;
+  --tag-border:    rgba(255,255,255,0.08);
+}
+
+/* Warm theme: subtle diamond grid texture (csreq-inspired) */
+html.theme-warm body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(45deg,  transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 29px),
+    repeating-linear-gradient(-45deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 29px);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ── Gradient text animation ──────────────────────────── */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 300% 300%;
+  animation: gradient-x 6s ease infinite;
+}
+
+/* ── Glow pulse ───────────────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.25; transform: scale(1.08); }
+}
+.animate-glow-pulse { animation: glow-pulse 5s ease-in-out infinite; }
+
+/* ── Hero CSS-only entrance ───────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up-0 { animation: fade-up 0.65s ease-out both; }
+.fade-up-1 { animation: fade-up 0.65s ease-out 150ms both; }
+.fade-up-2 { animation: fade-up 0.65s ease-out 300ms both; }
+.fade-up-3 { animation: fade-up 0.65s ease-out 450ms both; }
+.fade-up-4 { animation: fade-up 0.65s ease-out 600ms both; }
