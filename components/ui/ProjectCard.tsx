@@ -1,5 +1,6 @@
 import { ExternalLink, Apple, ShoppingBag } from "lucide-react";
 import type { Project, LinkType } from "@/data/projects";
+import type { Language } from "@/data/translations";
 import { GitHubIcon } from "@/components/icons/SocialIcons";
 
 type LinkLabels = Record<LinkType, string>;
@@ -14,14 +15,16 @@ const linkIcons: Record<LinkType, React.ElementType> = {
 
 export default function ProjectCard({
   project,
+  lang,
   labels = defaultLabels,
 }: {
   project: Project;
+  lang: Language;
   labels?: LinkLabels;
 }) {
   return (
     <article
-      className="group relative flex flex-col p-6 rounded-xl border transition-all duration-300 hover:-translate-y-1"
+      className="group relative flex h-full flex-col p-6 rounded-xl border transition-all duration-300 hover:-translate-y-1"
       style={{
         backgroundColor: "var(--card)",
         borderColor: "var(--border)",
@@ -52,14 +55,14 @@ export default function ProjectCard({
         className="font-semibold text-lg mb-2 pr-16 transition-colors duration-200 group-hover:text-[var(--accent-soft)]"
         style={{ color: "var(--text)" }}
       >
-        {project.title}
+        {project.title[lang]}
       </h3>
 
       <p
         className="text-sm leading-relaxed mb-5 flex-1"
         style={{ color: "var(--text-muted)" }}
       >
-        {project.description}
+        {project.description[lang]}
       </p>
 
       <div className="flex flex-wrap gap-2 mb-5">

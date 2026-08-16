@@ -37,7 +37,7 @@ export default function About() {
                   alt="Ertuğrul Likos"
                   width={256}
                   height={256}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   priority
                 />
               </div>

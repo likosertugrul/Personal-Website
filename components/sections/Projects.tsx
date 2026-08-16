@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import type { LinkType } from "@/data/projects";
 
 export default function Projects() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const p = t.projects;
 
   const labels: Record<LinkType, string> = {
@@ -27,8 +27,8 @@ export default function Projects() {
 
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14" stagger={0.07}>
           {projects.map((project) => (
-            <StaggerItem key={project.id}>
-              <ProjectCard project={project} labels={labels} />
+            <StaggerItem key={project.id} className="h-full">
+              <ProjectCard project={project} lang={lang} labels={labels} />
             </StaggerItem>
           ))}
         </StaggerContainer>
