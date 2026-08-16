@@ -207,8 +207,8 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Theme switcher */}
-          <ThemeSwitcher />
+          {/* Theme switcher — hidden for now, warm is the fixed theme */}
+          {/* <ThemeSwitcher /> */}
 
           <a
             href="#contact"
@@ -221,7 +221,7 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="md:hidden flex items-center gap-2">
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
           <button
             className="p-2 rounded-lg transition-colors"
             style={{ color: "var(--text-muted)" }}

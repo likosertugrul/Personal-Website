@@ -6,7 +6,7 @@ export type Theme = "dark" | "light" | "warm";
 
 type ThemeCtx = { theme: Theme; setTheme: (t: Theme) => void };
 
-const ThemeContext = createContext<ThemeCtx>({ theme: "dark", setTheme: () => {} });
+const ThemeContext = createContext<ThemeCtx>({ theme: "warm", setTheme: () => {} });
 
 function applyTheme(t: Theme) {
   const el = document.documentElement;
@@ -16,10 +16,10 @@ function applyTheme(t: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("warm");
 
   useEffect(() => {
-    const saved = (localStorage.getItem("theme") as Theme) || "dark";
+    const saved = (localStorage.getItem("theme") as Theme) || "warm";
     setThemeState(saved);
     applyTheme(saved);
   }, []);

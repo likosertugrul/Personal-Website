@@ -86,7 +86,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Anti-flash: apply saved theme before first paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('theme')||'dark';var el=document.documentElement;el.classList.add('theme-'+t);if(t!=='light')el.classList.add('dark');}())`,
+            __html: `(function(){var t=localStorage.getItem('theme')||'warm';var el=document.documentElement;el.classList.add('theme-'+t);if(t!=='light')el.classList.add('dark');}())`,
           }}
         />
         {/* JSON-LD structured data */}
